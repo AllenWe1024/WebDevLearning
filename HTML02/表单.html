@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <!-- input标签系列 -->
+      <!-- 文本框 -->
+      昵称：<input
+        type="text"
+        placeholder="请输入昵称"
+        value=""
+        name="nickname"
+      />
+      <br /><br />
+      <!-- placeholder显示提示信息 -->
+      密码：<input type="password" placeholder="密码不少于8位" /> <br /><br />
+      <!-- 密码框是看不到的 -->
+      单选框：
+      <input type="radio" name="属性1" checked id="1" />
+      <label for="1">A</label>
+      <!-- checked表示默认选中此项 -->
+      <input type="radio" name="属性1" id="2" />
+      <label for="2">B</label><br /><br />
+      多选框：
+      <label> <input type="checkbox" checked />A </label>
+      <label> <input type="checkbox" checked />B</label>
+      <label> <input type="checkbox" />C</label> <br /><br />
+      文件选择框：<input type="file" /> <br />
+      <!-- <hr /> -->
+      按钮：<input type="submit" />
+      <input type="reset" />
+      <input type="button" value="普通按钮" /><br />
+      <hr />
+      <!-- 按钮标签 -->
+      <button type="submit">提交按钮</button>
+      <button type="reset">重置按钮</button>
+      <button type="button">提交按钮</button>
+      <hr />
+      <!-- 下拉菜单 -->
+      下拉菜单：<select>
+        <option>选项1</option>
+        <option selected>选项2</option>
+        <!-- 默认选2 -->
+        <option>选项3</option>
+        <option>选项4</option></select
+      ><br />
+      <!-- 文本域标签 -->
+      <textarea placeholder="在此输入文字" cols="30" rows="10"></textarea>
+    </form>
+    <hr>
+    <!-- 语义标签 -->
+    <div><p>独占行测试</p></div>
+    测试
+    <span>一行可以多个1</span>
+    <span>一行可以多个2</span>
+
+  </body>
+</html>

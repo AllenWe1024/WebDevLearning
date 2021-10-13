@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="2">
+      <caption>
+        <h2>表格标题</h2>
+      </caption>
+      <thead>
+        <tr>
+          <th>表头单元格1</th>
+          <th>表头单元格1</th>
+          <th>表头单元格1</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>表格行1</td>
+          <td>表格合并</td>
+          <td>表格行3</td>
+        </tr>
+      </tbody>
+
+      <tr>
+        <td>表格行2,1</td>
+        <td rowspan="2">表格行2,2</td>
+        <td>表格行2,3</td>
+      </tr>
+      <tr>
+        <td>表格行3,1</td>
+        <!-- <td>表格行3,2</td> -->
+        <td>表格行3,3</td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td><em>表格底部1</em></td>
+          <td colspan="2"><em>表格底部2</em></td>
+          <!-- <td><em>表格底部3</em></td> -->
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
