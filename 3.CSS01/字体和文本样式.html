@@ -6,21 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body{
-            background-color:gray;
-        }
+      body {
+        background-color: gray;
+      }
       .p1 {
         color: white;
+        color: blue;
         font-size: 30px;
         font-weight: bold;
         font-style: italic;
         /* 字体倾斜 */
+      }
+      .div2 {
+        background-color: aqua;
+        width: 600px;
+        height: 600px;
+        margin: auto;
+      }
+      .p3 {
+        font: italic 700 50px 楷体, sans-serif;
+        text-align: center;
+        width: 400px;
+        height: 400px;
+        background-color: rgb(158, 150, 150);
+        margin: 0 auto;
+      }
+      .p4 {
+        text-indent: 2em;
+        color: rgb(255, 242, 230);
+        text-align: left;
+        /* background-color: rgb(46, 46, 46); */
+        /* background-color: rgb(255, 255, 255); */
 
+        text-decoration: underline;
+      }
+      .a1 {
+        text-decoration: none;
+        color: white;
+        /* text-decoration:wavy; */
       }
     </style>
   </head>
   <body>
-      
     <p class="p1">段落1</p>
+    <div class="div2">
+      段落2
+      <p class="p3">段落3<br /><a href="">超链接</a></p>
+    </div>
+    <p class="p4">
+      最初的现代计算机并不容易操作。当时的编程实际上是手工将电线连接成一排排电路来实现的。后来出现了机器语言和汇编语言，允许用户用代码为计算机编程，但这两种语言都需要对计算机的架构有深入的了解，使得许多科学家难以掌握。20世纪50年代，随着符号语言的发展，特别是由约翰·巴克斯及其团队在加州圣何塞的IBM开发的“公式翻译”语言Fortran，这种情况发生了变化。利用Fortran，用户可以用人类可读的指令来编程，例如x
+      = 3 + 5。然后由编译器将这些指令转换成快速、高效的机器代码。
+    </p>
+    <a href="" class="a1">test1111</a>
   </body>
 </html>
