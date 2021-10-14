@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .father {
+        color: black;
+      }
+      .father .son1 {
+        color: brown;
+      }
+      .father .son2 > p {
+        color: aqua;
+      } */
+      /* .father .son1,
+      .son2 {
+        color: blue;
+      } */
+      .d1.e1{
+          color: aqua;
+      }
+      .son2-4:hover{
+          color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <p>第一层</p>
+      <div class="son1">
+        <p>第二层</p>
+      </div>
+      <div class="son2">
+        <p>第二层-2</p>
+        <div class="son2-3">
+          <p>第三层</p>
+          <div class="son2-4">
+            <p>第四层</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d1 e1 f1">a1</div>
+    <div class="d2 e1 f2">b1</div>
+    <div class="d2 f3">c1</div>
+    <div>
+        <div class="red">
+            <div id="one">
+                <p class="red" id="one">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li>111</li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    <li></li>
+  </body>
+</html>
