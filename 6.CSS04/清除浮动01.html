@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+        /* height: 50px; */
+        /* 直接给父元素设置高度 */
+      }
+      /* 伪元素清除法 */
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+      }
+      ul li {
+        float: left;
+        /* height: 50px; */
+      }
+      a {
+        text-align: center;
+        line-height: 50px;
+        font-size: 16;
+        color: white;
+        display: block;
+        /* 这里占满li标签的大小 */
+        text-decoration: none;
+        height: 50px;
+        width: 80px;
+        background-color: #ffc0cb;
+        float: left;
+        /* float和display作用一样在这 */
+      }
+      a:hover {
+        background-color: #008000;
+      }
+      .box1 {
+        background-color: blue;
+        width: 800px;
+        height: 400px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="list1">
+      <li><a href="#">新闻1</a></li>
+      <li><a href="#">新闻2</a></li>
+      <li><a href="#">新闻3</a></li>
+      <li><a href="#">新闻4</a></li>
+      <li><a href="#">新闻5</a></li>
+      <li><a href="#">新闻6</a></li>
+      <li><a href="#">新闻7</a></li>
+      <li><a href="#">新闻8</a></li>
+    </ul>
+    <div class="box1"></div>
+   
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1、找到第一个子元素，并且为li标签 */
+      li:first-child {
+        background-color: blue;
+      }
+      li:last-child {
+        background-color: aqua;
+      }
+      li:nth-child(3) {
+        background-color: red;
+      }
+      li:nth-last-child(4) {
+        background-color: green;
+      }
+      /* n组合 */
+      li:nth-child(2n) {
+        background-color: rgb(0, 204, 255);
+      }
+      li:nth-child(2n + 1) {
+        background-color: brown;
+      }
+      /* 错误的写法 */
+      li a:first-child {
+        /* color: red; */
+      }
+      /* 正确的写法 */
+      li:first-child a {
+        color: red;
+      }
+      /* 直接在同类型里面找 */
+      li:nth-of-type(3){
+          background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>我是第1个li</li>
+      <li>我是第2个li</li>
+      <li>我是第3个li</li>
+      <li>我是第4个li</li>
+      <li>我是第5个li</li>
+      <li>我是第6个li</li>
+      <li>我是第7个li</li>
+      <li>我是第8个li</li>
+      <li>我是第9个li</li>
+      <li>我是第10个li</li>
+    </ul>
+    <ul>
+      <li><a href="#">我是第1个a标签</a></li>
+      <li><a href="#">我是第2个a标签</a></li>
+      <li><a href="#">我是第3个a标签</a></li>
+      <li><a href="#">我是第4个a标签</a></li>
+      <li><a href="#">我是第5个a标签</a></li>
+      <li><a href="#">我是第6个a标签</a></li>
+      <li><a href="#">我是第7个a标签</a></li>
+      <li><a href="#">我是第8个a标签</a></li>
+    </ul>
+  </body>
+</html>
