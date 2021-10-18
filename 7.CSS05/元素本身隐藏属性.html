@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 300px;
+        height: 300px;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .green {
+        background-color: green;
+
+      }
+      /* .green:hover {
+        display: none;
+      } */
+
+      .blue {
+        background-color: blue;
+      }
+      .son{
+          width: 100px;
+          height: 100px;
+          background-color: blue;
+          visibility: hidden;
+      }
+      .red:hover .son{
+          visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="red"><div class="son"></div></div>
+    
+    <div class="green"></div>
+    <div class="blue"></div>
+  </body>
+</html>
