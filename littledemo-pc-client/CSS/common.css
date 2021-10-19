@@ -1,0 +1,213 @@
+/* 先版心 */
+.container {
+  margin: 0 auto;
+  width: 1240px;
+}
+/* 快捷菜单模块 */
+.littledemo-shortcut {
+  height: 52px;
+  background-color: #333333;
+}
+.littledemo-shortcut .container {
+  height: 52px;
+  /* ps */
+  /* background-color: aqua; */
+}
+.littledemo-shortcut li {
+  float: left;
+  line-height: 52px;
+  color: #dcdcdc;
+}
+.littledemo-shortcut ul a {
+  margin: 0 16px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #dcdcdc;
+}
+
+.littledemo-shortcut li:nth-last-child(1) a {
+  margin-right: 0;
+}
+
+.littledemo-shortcut li:nth-last-child(1) a::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-top: -3px;
+  margin-right: 8px;
+  background: url(../images/sprites.png) -160px -70px;
+  vertical-align: middle;
+}
+/* 主导航模块 */
+.littledemo-main-nav {
+  /* width: auto; */
+  /* 上面这行不能写 */
+  height: 130px;
+
+  box-sizing: border-box;
+  padding-top: 30px;
+  /* background-color: blue; */
+}
+
+.littledemo-main-nav .logo {
+  width: 207px;
+  height: 70px;
+  margin-left: 25px;
+
+  /* background-color: red; */
+}
+
+.littledemo-main-nav .logo a {
+  display: block;
+  width: auto;
+  height: 70px;
+  /* background-color:black; */
+  background: url(../images/logo.png) center/207px;
+  /* 为了去除文字大小 */
+  font-size: 0;
+}
+
+.littledemo-main-nav li {
+  float: left;
+  /* height: 70px; */
+  line-height: 70px;
+  margin-right: 48px;
+  /* background-color:#27ba9b; */
+}
+.littledemo-main-nav li:first-child {
+  margin-left: 40px;
+}
+
+.littledemo-main-nav ul li a:hover {
+  color: #27ba9b;
+  border-bottom: 1px solid #27ba9b;
+  padding-bottom: 7px;
+}
+
+.littledemo-main-nav .search {
+  position: relative;
+  width: 172px;
+  height: 30px;
+  margin-top: 24px;
+  margin-left: 34px;
+  background-color: aqua;
+}
+.littledemo-main-nav .search input {
+  width: 172px;
+  height: 30px;
+  border-bottom: 2px solid #e7e7e7;
+  padding-left: 31px;
+}
+
+.littledemo-main-nav .search::before {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: url(../images/sprites.png) -80px -70px;
+  /* background-color: aqua; */
+}
+.littledemo-main-nav .cart {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  margin-top: 28px;
+  margin-left: 15px;
+  background-color: aqua;
+  background: url(../images/sprites.png) -120px -70px;
+}
+
+.littledemo-main-nav .cart span {
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  width: 20px;
+  height: 15px;
+  background-color: #e26237;
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+/* 宣传服务模块 */
+.littledemo-main-service {
+  box-sizing: border-box;
+  height: 174px;
+  background-color: #333;
+}
+.littledemo-main-service .container {
+  box-sizing: border-box;
+
+  height: 174px;
+  border-bottom: 1px solid #434343;
+}
+.littledemo-main-service .container a {
+  float: left;
+  width: 33.3333%;
+  /* ps */
+  /* background-color: bisque; */
+  text-align: center;
+  line-height: 174px;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.littledemo-main-service .container a::before {
+  content: "";
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  margin-right: 19px;
+  /* ps */
+  /* background-color: aqua; */
+  background: url(../images/sprites.png) 0px 0px;
+  /* 居中对齐 */
+  vertical-align: middle;
+}
+.littledemo-main-service .container a:nth-child(2):before {
+  background: url(../images/sprites.png) -130px 0px;
+}
+.littledemo-main-service .container a:nth-child(3):before {
+  background: url(../images/sprites.png) -65px 0px;
+}
+/* 版权信息模块 */
+
+.littledemo-main-copyright {
+  /* 解决塌陷 */
+  overflow: hidden;
+  height: 168px;
+  background-color: #333;
+}
+.littledemo-main-copyright .container {
+  height: 168px;
+  text-align: center;
+  color: #999999;
+}
+.littledemo-main-copyright .container ul {
+  margin-top: 41px;
+  margin-bottom: 19px;
+  text-align: center;
+}
+.littledemo-main-copyright .container li {
+  display: inline-block;
+
+  /* ps */
+  /* background-color: aqua; */
+  /* line-height: 48px; */
+  font-size: 14px;
+}
+.littledemo-main-copyright .container li a {
+  color: #999999;
+  margin-left: 11px;
+  margin-right: 11px;
+  vertical-align: middle;
+
+}
