@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img1{
+            position: relative;
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        .img1 img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: auto;
+            transition: all 1s;
+
+        }
+        .img1 img:hover{
+            transform: translate(200px, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="img1">
+        <img src="./background.jpg" alt="">
+    </div>
+</body>
+</html>

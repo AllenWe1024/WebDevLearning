@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                list-style: none;
+            }
+            .box1 {
+                position: relative;
+                width: 400px;
+                height: 300px;
+                border: 1px solid black;
+            }
+            /* .box2 {
+                position: relative;
+                width: 400px;
+                height: 300px;
+            } */
+            .img1 {
+                position: relative;
+
+                width: 100%;
+            }
+            p {
+                text-align: center;
+            }
+            .box1::after {
+                position: absolute;
+                top: 43%;
+                left: 50%;
+                /* margin-left: -29px;
+                margin-top: -29px; */
+
+                transform: translate(-50%,-50%) scale(5);
+                content: "";
+                width: 58px;
+                height: 58px;
+                /* background-color: blue; */
+                background: url(./play.png) center;
+                opacity: 0;
+                transition: all .5s;
+            }
+            /* .box1:hover{
+                background-color: aqua;
+            } */
+            .box1:hover::after{
+                transform: translate(-50%,-50%) scale(1);
+                opacity: 1;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+                <img src="./background.jpg" alt="" class="img1" />
+            <p>测试</p>
+        </div>
+    </body>
+</html>

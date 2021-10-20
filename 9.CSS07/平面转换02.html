@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                width: 500px;
+                height: 300px;
+                margin: 0 auto;
+                background: url("./background.jpg") center/500px;
+                overflow: hidden;
+            }
+
+            .box::before,
+            .box::after {
+                float: left;
+                content: "";
+                width: 50%;
+                height: 300px;
+                background-image: url(./background.jpg);
+                transition: all 0.5s;
+            }
+
+            .box::after {
+                background-position:top right
+;
+            }
+
+            /* 鼠标移入的时候的位置改变的效果 */
+            .box:hover::before {
+                transform: translate(-100%);
+            }
+
+            .box:hover::after {
+                transform: translate(100%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box"></div>
+    </body>
+</html>
