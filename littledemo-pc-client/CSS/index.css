@@ -1,0 +1,141 @@
+/* 网站入口模块 */
+.littledemo-entry {
+  height: 500px;
+  background-color: #f5f5f5;
+}
+.littledemo-entry .container {
+  position: relative;
+  /* background-color: aqua; */
+  height: 500px;
+}
+.littledemo-entry .container .category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 251px;
+  height: 500px;
+  background-color: #000000;
+  opacity: 0.8;
+}
+
+.littledemo-entry .container .category li {
+  position: relative;
+
+  height: 50px;
+  padding-left: 36px;
+  line-height: 50px;
+}
+.littledemo-entry .container .category li:hover {
+  background-color: #27ba9b;
+}
+.littledemo-entry .container .category a {
+  color: #ffffff;
+}
+.littledemo-entry .container .category span {
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.littledemo-entry .container .category a::after {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  content: "";
+  width: 6px;
+  height: 11px;
+  background: url(../images/sprites.png) -80px -110px;
+}
+
+.littledemo-entry .container .prev {
+  position: absolute;
+  top: 228px;
+  left: 260px;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2) url(../images/sprites.png) 14px -58px;
+  /* background-color: #000000;
+	opacity: 0.2; */
+  /* background-color: ; */
+  border-radius: 50%;
+}
+.littledemo-entry .container .next {
+  position: absolute;
+  top: 228px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2) url(../images/sprites.png) -22px -58px;
+  border-radius: 50%;
+}
+
+.littledemo-entry .container .indicator {
+  position: absolute;
+  top: 459px;
+  left: 680px;
+  width: 110px;
+  height: 10px;
+  /* ps */
+  /* background-color: aqua; */
+}
+
+.littledemo-entry .container .indicator li {
+  float: left;
+  margin-right: 15px;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  opacity: 0.43;
+  border-radius: 50%;
+}
+.littledemo-entry .container .indicator li:last-child {
+  margin: 0px;
+}
+
+.littledemo-entry .container .indicator li.active {
+  background-color: #ffffff;
+  opacity: 1;
+}
+.littledemo-goods {
+  height: 520px;
+  /* ps */
+  /* background-color: aqua; */
+}
+.littledemo-goods .header {
+  height: 115px;
+  /* ps */
+  /* background-color: bisque; */
+  line-height: 115px;
+}
+.littledemo-goods .header h2 {
+  /* height: 29px; */
+  font-family: PingFangSC-Regular;
+  font-size: 29px;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+.littledemo-goods .header h2 span {
+  margin-left: 34px;
+  font-size: 16px;
+  color: #999999;
+}
+.littledemo-goods .header a {
+  color: #999999;
+}
+.littledemo-goods .header a::after {
+  display: inline-block;
+  /* float: right; */
+  content: "";
+  width: 7px;
+  height: 13px;
+  margin-left: 13px;
+  /* ps */
+  /* background-color: red; */
+  background: url(../images/sprites.png) 0px -110px;
+  vertical-align: middle;
+}
+.littledemo-goods .goodslist {
+  height: 405px;
+  /* ps */
+  background-color: chartreuse;
+}
