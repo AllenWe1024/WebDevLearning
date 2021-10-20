@@ -108,6 +108,8 @@
 }
 .littledemo-goods .header h2 {
   /* height: 29px; */
+  height: 115px;
+
   font-family: PingFangSC-Regular;
   font-size: 29px;
   font-weight: normal;
@@ -137,5 +139,45 @@
 .littledemo-goods .goodslist {
   height: 405px;
   /* ps */
-  background-color: chartreuse;
+  /* background-color: chartreuse; */
+}
+
+.littledemo-goods .goodslist li{
+    float: left;
+    width: 304px;
+    height: 405px;
+    margin-right: 8px;
+    /* ps */
+    background-color: #f0f9f4;
+    line-height: 1;
+    text-align: center;
+}
+
+.littledemo-goods .goodslist li:last-child{
+    margin-right: 0px;
+
+}
+
+.littledemo-goods .goodslist li img{
+    width: 100%;
+}
+.littledemo-goods .goodslist li h3{
+    margin-top: 22px;
+    margin-bottom: 19px;
+    height: 20px;
+    font-weight: normal;
+	font-stretch: normal;
+    color: #333333;
+}
+
+.littledemo-goods .goodslist li p{
+    font-size: 23px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #9a2e1f;
+}
+.littledemo-goods .goodslist li span{
+    font-size: 17px;
+
 }
