@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./iconfont/iconfont.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                list-style: none;
+            }
+            .box {
+                width: 800px;
+                height: 150px;
+                border: 1px solid blue;
+                margin: 0 auto;
+            }
+            .box li {
+                position: relative;
+                float: left;
+                width: 200px;
+                height: 150px;
+                margin-left: 50px;
+                /* border: 1px solid red; */
+                /* background-image: linear-gradient(
+                red,
+                orange,
+                yellow,
+                green,
+                blue,
+                purple
+            ); */
+                /* background-image: url(./background.jpg); */
+                /* background-image: linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.6)
+                ); */
+                overflow: hidden;
+            }
+            li img {
+                position: absolute;
+                height: 150px;
+                /* width: 200px; */
+            }
+
+            li .txt {
+                /* display: block; */
+                position: absolute;
+                bottom: -30px;
+                padding-bottom: 2px;
+                left: 50px;
+                /* 设置图层以置顶文字 */
+                z-index: 1;
+                transform: translate(-50%);
+                color: white;
+                transition: all 0.5s;
+            }
+
+            li .txt span {
+                display: inline-block;
+                padding-top: 20px;
+                font-size: 12px;
+                /* vertical-align: middle; */
+            }
+
+            li .txt i {
+                font-size: 12px;
+            }
+
+            li .mask {
+                position: absolute;
+                top: 0;
+                left: 0px;
+                opacity: 0;
+                width: 250px;
+                height: 150px;
+                background-image: linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.6)
+                );
+                /* border-corner-image: linear-gradient(); */
+                transition: all 0.5s;
+            }
+            li img {
+                transition: all 0.5s;
+            }
+            li:hover img {
+                transform: scale(1.2);
+            }
+            li:hover .mask {
+                opacity: 1;
+            }
+            li:hover .txt {
+                transform: translate(-50%, -30px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="pic">
+                            <img src="./background.jpg" alt="" />
+                        </div>
+                        <div class="txt">
+                            <h4>标题1</h4>
+                            <h5>详细描述</h5>
+                            <p>
+                                <span>了解更多</span>
+                                <i class="iconfont icon-arrow-right"></i>
+                            </p>
+                        </div>
+                        <!-- 添加背景 -->
+                        <div class="mask"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic">
+                            <img src="./background.jpg" alt="" />
+                        </div>
+                        <div class="mask"></div>
+                        <div class="txt">
+                            <h4>标题2</h4>
+                            <h5>详细描述</h5>
+                            <p>
+                                <span>了解更多</span>
+                                <i class="iconfont icon-arrow-right"></i>
+                            </p>
+                        </div>
+                        <!-- 添加背景 -->
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="pic">
+                            <img src="./background.jpg" alt="" />
+                        </div>
+                        <div class="txt">
+                            <h4>标题3</h4>
+                            <h5>详细描述</h5>
+                            <p>
+                                <span>了解更多</span>
+                                <i class="iconfont icon-arrow-right"></i>
+                            </p>
+                        </div>
+                        <!-- 添加背景 -->
+                        <div class="mask"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
