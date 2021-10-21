@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            li {
+                list-style: none;
+            }
+
+            img {
+                width: 150px;
+                height: 112px;
+            }
+
+            .box {
+                width: 300px;
+                height: 112px;
+                border: 1px solid #000;
+                margin: 100px auto;
+                overflow: hidden;
+            }
+
+            .box ul {
+                width: 1200px;
+                animation: move 5s infinite linear;
+            }
+            .box li {
+                float: left;
+
+            }
+
+            @keyframes move {
+                to{
+                    transform: translateX(-900px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <ul>
+                <li><img src="./background.jpg" alt="" /></li>
+                <li><img src="./IMG_0511.png" alt="" /></li>
+                <li><img src="./background.jpg" alt="" /></li>
+                <li><img src="./IMG_0511.png" alt="" /></li>
+                <li><img src="./background.jpg" alt="" /></li>
+                <li><img src="./IMG_0511.png" alt="" /></li>
+                <!-- 重复图：填充 -->
+                <li><img src="./background.jpg" alt="" /></li>
+                <li><img src="./IMG_0511.png" alt="" /></li>
+            </ul>
+        </div>
+    </body>
+</html>

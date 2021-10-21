@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                height: 100%;
+            }
+
+            body {
+                height: 100%;
+                background: url(./background.jpg) no-repeat center 0;
+
+                /* 缩放背景图 */
+
+                /* 图片等比例缩放, 当宽度或高度和盒子尺寸相等, 图片就不再缩放 */
+                /* background-size: contain; */
+
+                /* 图片等比例缩放, 图片完全覆盖到整个盒子, 可能会导致图片显示不全 */
+                background-size: cover;
+            }
+
+            /* 
+1. img 引入图片, 控制位置
+2. 定义动画,使用动画
+*/
+
+            .box1 img {
+                position: relative;
+                /* left: 50%; */
+                top: 0;
+            }
+
+            .box1 img:nth-child(1) {
+                position: absolute;
+                top: 300px;
+                left: 20px;
+                width: 100px;
+                animation: cloud 1s infinite alternate;
+            }
+            .box1 img:nth-child(2) {
+                position: absolute;
+                top: 300px;
+                left: 200px;
+                width: 100px;
+                animation: cloud 1s infinite alternate 0.2s;
+            }
+            .box1 img:nth-child(3) {
+                position: absolute;
+                top: 500px;
+                left: 40px;
+                width: 100px;
+                animation: rotate 2s infinite linear;
+            }
+
+            /* 云彩动画 */
+            @keyframes cloud {
+                to {
+                    transform: translateX(20px);
+                }
+            }
+            @keyframes rotate {
+                to{
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            <img src="./IMG_0511.png" alt="" />
+            <img src="./IMG_0511.png" alt="" />
+            <img src="./IMG_0511.png" alt="" />
+        </div>
+    </body>
+</html>

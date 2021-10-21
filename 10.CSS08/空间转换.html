@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box1 {
+                position: relative;
+                transform-style: preserve-3d; /* background-color: bisque; */
+                width: 200px;
+                height: 200px;
+                margin: 100px 100px;
+                /* background-color: blue; */
+                transition: all 0.5s;
+            }
+            .box1 div {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200px;
+                height: 200px;
+            }
+            .box1 .box2 {
+                background-color: aqua;
+                transform: translateZ(100px);
+            }
+            .box1 .box3 {
+                background-color: orange;
+                transform: translateZ(-100px);
+            }
+            .box1 .box4 {
+                background-color: red;
+                transform: rotateY(90deg) translateZ(-100px);
+            }
+            .box1:hover {
+                /* transform: translate3d(50px, 100px, 200px);
+                transform: translateX(100px);
+                transform: translateY(100px); */
+                /* transform: translateZ(100px); */
+                transform: rotateY(150deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+            <div class="box7"></div>
+        </div>
+    </body>
+</html>
