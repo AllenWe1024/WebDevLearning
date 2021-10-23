@@ -19,7 +19,7 @@ body {
     /* 80px：为了内容不被底部区域盖住 */
     padding: 12px 11px 80px;
     /* test */
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .main .user_msg {
@@ -172,7 +172,107 @@ body {
     text-align: center;
     line-height: 44px;
 }
+.main .rest{
+    padding: 15px;
 
+}
+.main .rest div{
+    display: flex;
+    justify-content:space-between;
+
+    margin-bottom: 29px;
+    /* padding: 14px; */
+
+
+}
+.main .rest div:last-child{
+    display: flex;
+    justify-content:space-between;
+
+    margin-bottom: 0;
+    /* padding: 14px; */
+
+
+}
+.main .rest div:nth-child(2){
+    justify-content:flex-start
+}
+
+.main .rest div:nth-child(2) h5{
+    margin-right: 19px;
+}
+.main .rest div h5{
+    height: 13px;
+	font-family: PingFangSC-Regular;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 21px;
+	letter-spacing: 0px;
+	color: #262626;
+}
+
+.main .rest div p{
+    height: 13px;
+    font-family: PingFangSC-Regular;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 21px;
+	letter-spacing: 0px;
+	color: #262626;
+}
+.main .rest div:nth-child(2) p{
+    font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 21px;
+	letter-spacing: 0px;
+	color: #989898;
+}
+
+.main .fee{
+    padding: 15px;
+}
+.main .fee div{
+    display: flex;
+    justify-content:space-between;
+
+    margin-bottom: 29px;
+}
+
+.main .fee div:last-child{
+
+    margin-bottom: 0;
+}
+
+.main .fee div h5{
+    width: 52px;
+	height: 13px;
+	font-family: PingFangSC-Regular;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 21px;
+	letter-spacing: 0px;
+	color: #262626;
+
+}
+
+.main .fee div span{
+    height: 10px;
+	font-family: PingFangSC-Regular;
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 21px;
+	letter-spacing: 0px;
+	color: #262626;
+}
+
+.main .fee div:last-child span{
+    color: #cf4444;
+}
 /* 主体内容：滑动查看 */
 
 /* 底部支付：固定定位 */
