@@ -1,0 +1,95 @@
+.xtx_body {
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper {
+    display: flex;
+}
+
+/* 侧边栏 */
+.xtx_body .aside {
+    width: 227px;
+    min-height: 500px;
+    margin-right: 18px;
+    background-color: pink;
+}
+
+/* 主体内容 */
+.xtx_body .main {
+    /* width: ; */
+    flex: 1;
+    min-height: 500px;
+    /* background-color: skyblue; */
+}
+
+/* 账户概览 */
+.overview {
+    display: flex;
+    height: 132px;
+    margin-bottom: 18px;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.overview div {
+    /* a在一行显示 */
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex: 1;
+
+    text-align: center;
+}
+
+.overview div:first-child {
+    border-right: 1px solid #f4f4f4;
+}
+
+.overview div a img {
+    width: 25px;
+    margin-bottom: 10px;
+}
+
+.overview div span {
+    font-size: 25px;
+    color: #e05e30;
+}
+
+.overview div p {
+    font-size: 16px;
+}
+
+/* 把概览区域最后一个图变宽度为18px */
+/* overview的div 里边的最后一个a里面的img */
+.overview div a:last-child img {
+    width: 18px;
+}
+
+/* 公共样式 */
+.pannel {
+    padding: 28px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.pannel .pannel_title {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.pannel .pannel_title h4 {
+    font-size: 22px;
+    color: #333;
+    font-weight: 400;
+}
+
+.pannel .pannel_title a {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #999;
+}
