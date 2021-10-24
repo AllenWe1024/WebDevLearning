@@ -9,10 +9,10 @@
 
 /* 侧边栏 */
 .xtx_body .aside {
-    width: 227px;
-    min-height: 500px;
+	width: 227px;
+	height: 1348px;
     margin-right: 18px;
-    background-color: pink;
+    background-color: white;
 }
 
 /* 主体内容 */
@@ -79,7 +79,7 @@
     display: flex;
     justify-content: space-between;
     height: 45px;
-    border-bottom: 1px solid #f4f4f4;
+    /* border-bottom: 1px solid #f4f4f4; */
 }
 
 .pannel .pannel_title h4 {
@@ -92,4 +92,105 @@
     margin-top: 8px;
     font-size: 16px;
     color: #999;
+}
+
+.orders li{
+    display: flex;
+    height: 137px;
+    margin-bottom: 20px;
+    border: 1px solid #f4f4f4;
+}
+
+.orders li:last-child{
+    margin-bottom: 0px;
+
+}
+
+.orders li .goods{
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    margin-right: 120px;
+    padding: 17px 0 14px 12px;
+
+
+
+}
+.orders li .goods .text {
+    flex: 1;
+    /* 溢出的时候显示省略号 */
+    /* 因为弹性盒子的尺寸可以被内容撑开, 不换行的文字可以撑开这个盒子的尺寸 */
+    width: 0;
+}
+.orders li .goods .text h5 {
+    font-size: 16px;
+    /* 设置最后一字变为省略号 */
+    text-overflow: ellipsis;
+    /* 设置不换行 */
+    white-space: nowrap;
+    /* 设置溢出隐藏 */
+    overflow: hidden;
+}
+
+.orders li .goods .text span{
+    font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.orders li .goods .pic{
+    width: 107px;
+    height: 107px;
+}
+
+.orders li .status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+
+	font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #e05e30;
+}
+
+.orders li .payment{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 200px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    
+    font-size: 14px;
+}
+.orders li .payment p:first-child{
+    color: #9a2e1f;
+}
+.orders li .button{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+    width: 180px;
+
+    font-size: 14px;
+}
+
+.orders li .button a:first-child{
+    text-align: center;
+    line-height: 30px;
+    width: 100px;
+	height: 30px;
+    margin-bottom: 10px;
+	background-color: #5eb69c;
+	border-radius: 2px;
 }
