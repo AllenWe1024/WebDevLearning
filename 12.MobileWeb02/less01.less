@@ -1,0 +1,37 @@
+// out : ./testoutput1
+// 单行注释
+/* 多行注释
+ 多行注释*/
+
+ .box {
+    width: 100 + 10px;
+    width: 100 - 20px;
+    width: 100 * 2px;
+
+    // 除法
+    // 68  > rem
+    width: (68 / 37.5rem);
+    // height: 29 ./ 37.5rem;
+
+    // height: 29 / 37.5rem;
+
+}
+
+.father{
+    width: 100px;
+    .son{
+        color: aqua;
+        &:hover{
+            color: red;
+        }
+    }
+}
+
+// 批量修改属性值
+// 1. 定义. 2.使用
+@color1:green;
+
+.box {
+    color: @color1;
+}
+
