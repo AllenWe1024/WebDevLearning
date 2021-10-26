@@ -1,2 +1,78 @@
 @import url(./base.less);
 @import url(./normalize.less);
+
+// 变量存储
+@rootsize: 37.5rem;
+
+body {
+    background-color: #f0f0f0;
+}
+
+.main {
+    // 注意用rem单位
+    margin-bottom: (50 / @rootsize);
+    // test
+    // background: #FECA49;
+    .banner {
+        img {
+            height: (160 / @rootsize);
+        }
+    }
+    // 活动标题
+    .title {
+        height: (40 / @rootsize);
+        margin-left: (15 / @rootsize);
+
+        // text-align: center;
+        line-height: (40 / @rootsize);
+        h4 {
+            font-size: (14 / @rootsize);
+            color: #3c3c3c;
+        }
+    }
+
+    .item1 {
+        position: relative;
+        margin-bottom: (10/@rootsize);
+        .pic img {
+            height: (160 / @rootsize);
+        }
+        .status{
+
+        }
+        .favorate{
+            position: absolute;
+            top: (18/@rootsize);
+            right: (18/@rootsize);
+
+            width: (24/@rootsize);
+            height: (24/@rootsize);
+
+            text-align: center;
+            line-height: (24/@rootsize);
+
+            i{
+                font-size: (24/@rootsize);
+
+            }
+
+        }
+        .txt{
+            padding: (10/@rootsize) (15/@rootsize);
+
+            // test
+            // background-color: aqua;
+            background-color: white;
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: (50 / @rootsize);
+
+    background-color: #feca49;
+}
