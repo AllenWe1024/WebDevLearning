@@ -31,16 +31,108 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100vw;
   height: 22.4vw;
+  background-color: #fff;
 }
 header .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-right: 4.8vw;
   padding-left: 3.2vw;
   height: 11.73333333vw;
-  background-color: aquamarine;
+}
+header .top .left i {
+  font-size: 7.46666667vw;
+  color: #fb7299;
+}
+header .top .right {
+  display: flex;
+}
+header .top .right a i {
+  font-size: 5.86666667vw;
+  color: #ccc;
+}
+header .top .right .login,
+header .top .right .download {
+  height: 6.4vw;
+  width: 6.4vw;
+  margin-left: 6.4vw;
+}
+header .top .right .download {
+  width: 19.2vw;
 }
 header .bottom {
-  height: 10.69518717vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10.66666667vw;
   border-bottom: 1px solid #eee;
+}
+header .bottom .tab ul {
+  display: flex;
+}
+header .bottom .tab ul li {
+  padding: 0 4.26666667vw;
+}
+header .bottom .tab ul li a {
+  display: block;
+  height: 10.13333333vw;
+  line-height: 10.4vw;
+  font-size: 3.73333333vw;
+}
+header .bottom .tab ul li a.active {
+  border-bottom: 2px solid #fb7299;
+  color: #fb7299;
+}
+header .bottom .more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10.66666667vw;
+  height: 10.66666667vw;
+}
+header .bottom .more a {
+  line-height: 10.66666667vw;
+  text-align: center;
+}
+header .bottom .more a i {
+  font-size: 5.86666667vw;
+  color: #ccc;
+}
+.video_content {
+  margin-top: 22.4vw;
+  padding: 0 2.66666667vw;
+}
+.video_content .video_list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.video_content .video_list a {
+  width: 50%;
+  padding: 2.13333333vw 1.33333333vw;
+  font-size: 3.2vw;
+}
+.video_content .video_list a .pic {
+  position: relative;
+}
+.video_content .video_list a .pic .count {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.13333333vw;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  color: white;
+}
+.video_content .video_list a .pic .count i {
+  vertical-align: baseline;
+}
+.video_content .video_list a .txt {
+  margin-top: 1.33333333vw;
 }
