@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        alert('Hello world!');
-        
-    </script>
 </head>
 
 <body>
-    <input type="button" value="hello world" onclick="alert('hello world')">
-    <script src="./helloworld.js"></script>
+    <script>
+
+        var a = prompt('输入第一个数据');
+        var b = prompt('输入第二个数据');
+
+        var tmep = a;
+        a = b;
+        b = tmep;
+
+        alert(a + b)
+
+    </script>
 </body>
 
 </html>
