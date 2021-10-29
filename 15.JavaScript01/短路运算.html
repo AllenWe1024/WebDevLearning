@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 短路运算的原理：当有多个表达式（值）时,碰到第一个假（否定值）中断，若为与则一直从头与到（向右）中断为止，若为或则从中断后面一个一直或到（向左）最前面一个数为止; */
+        console.log(123 && 456); // 456
+        console.log(0 && 456); //  0
+        console.log(0 && 1 + 2 && 456 * 56789); // 0
+        console.log('' && 1 + 2 && 456 * 56789); // ''
+        console.log(123 && 456 && 789 && 123456); // 123456
+        console.log(123 && 456 && 0 && 789 && 123); // 0
+        console.log('————————————————————');
+        console.log(123 || 456); // 123
+        console.log(123 || 456 || 456 + 123); // 123
+        console.log(0 || 456 || 456 + 123); // 456
+        console.log(1234 || 4567 || 78910); // 1234
+        console.log(123 || 456 || 789 || 0 || 1234 || 4567 || 78910); // 123
+    </script>
+</body>
+
+</html>
