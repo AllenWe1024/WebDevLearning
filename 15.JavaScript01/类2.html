@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Book(title, pages, isbn) {
+        //     this.title = title;
+        //     this.pages = pages;
+        //     this.isbn = isbn;
+        // }
+        // var Book = {
+        //     name: 1
+        // };
+
+        function Book() { };//构造函数定义类
+        // var Book;
+        var book1 = new Book();//实例化
+        Book.prototype.printTitle = function () {//prototype类外定义函数
+            console.log("123");
+        }
+        book1.printTitle();
+        //当然也能在类内定义
+
+        const jsf = {
+            name: '111',
+            // var age : 11,
+        };
+
+        let a = 1;
+        a = 2;
+        console.log(a);
+
+        const book = {
+            name: 'BOOKA',
+        };
+        console.log(`123${book.name}
+        123
+        123`)
+
+        var x = function (y) {
+            return y * y;
+        };
+        console.log(x(2));
+        var xx = yy => yy * yy;
+        console.log(xx(3));
+
+
+    </script>
+</body>
+
+</html>
