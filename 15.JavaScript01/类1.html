@@ -11,8 +11,8 @@
         function A1(){
             this.name="11111";
         }
-
-        alert( A1().name);
+        var a1 = new A1();
+        console.log(a1.name);
         function Book(){};//构造函数定义类
         // var Book;
         var book1 = new Book();//实例化
@@ -22,6 +22,10 @@
         book1.printTitle();//访问
 
         //当然也能在类内定义，同样需要= function ()定义
+
+        let a = 1;
+        a = 2;
+        console.log(a);
     </script>
 </body>
 </html>
