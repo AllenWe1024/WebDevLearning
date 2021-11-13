@@ -1,0 +1,35 @@
+.navbar-default {
+  background-color: transparent;
+  border: 0;
+}
+.carousel img {
+  height: 100% !important;
+  margin: 0 auto ;
+}
+@media (max-width: 992px) {
+  .carousel .item {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel .item {
+    height: 250px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel .item {
+    height: 500px;
+  }
+}
+.projectname {
+  padding: 30px;
+  text-align: center;
+}
+.projectname .container div {
+  background-color: aqua;
+}
+.projectname .container div a {
+  display: block;
+  height: 200px;
+  background-color: blue;
+}
