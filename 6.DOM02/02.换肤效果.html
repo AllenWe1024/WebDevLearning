@@ -51,6 +51,7 @@
         let imgs = document.querySelector('.baidu').querySelectorAll('img');
         for (let i = 0; i < imgs.length; i++) {
             imgs[i].onclick = function () {
+                // 注意路径的修改
                 document.body.style.backgroundImage = 'url(' + this.src + ')';
             }
         }
