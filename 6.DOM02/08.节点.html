@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var erweima = document.querySelector('.erweima');
+
+        console.dir(box);
+        // 节点方法
+        // 得到的是离元素最近的父级节点，如果找不到父节点就返回为 null
+        console.log(erweima.parentNode);
+
+        // DOM 提供的方法（API）获取
+        var ul = document.querySelector('ul');
+        var lis = ul.querySelectorAll('li');
+
+        console.log('-----------------------');
+        // 1. 子节点  childNodes 所有的子节点 包含 元素节点 文本节点等等
+        console.log(ul.childNodes);
+        console.log(ul.childNodes[0].nodeType);
+        console.log(ul.childNodes[1].nodeType);
+        // 2. children 获取所有的子元素节点 也是我们实际开发常用的
+        console.log(ul.children);
+
+        // 1. firstChild 第一个子节点 不管是文本节点还是元素节点
+        console.log(ol.firstChild);
+        console.log(ol.lastChild);
+        // 2. firstElementChild 返回第一个子元素节点 ie9才支持
+        console.log(ol.firstElementChild);
+        console.log(ol.lastElementChild);
+        // 3. 实际开发的写法  既没有兼容性问题又返回第一个子元素
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]);
+
+    </script>
+</body>
+
+</html>
