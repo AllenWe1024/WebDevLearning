@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+            height: 50px;
+            animation: change 6s linear infinite;
+
+        }
+        @keyframes change {
+            from {
+
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="./IMG_0511.png" alt="">
+    <script>
+        let pic = document.querySelector('img');
+        document.addEventListener('mousemove', function(e){
+            
+            var x = e.pageX;
+            var y = e.pageY;
+            pic.style.left = x + 10 +'px';
+            pic.style.top = y + 10 +'px';
+        })
+
+    </script>
+</body>
+</html>
