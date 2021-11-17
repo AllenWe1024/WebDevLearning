@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        let datas = [{
+            name: '123',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: 'abc',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '333',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '444',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '555',
+            subject: 'JavaScript',
+            score: 0
+        }];
+        // 创建行
+        const tbody = document.querySelector('tbody');
+        for (let i = 0; i < datas.length; i++) {
+            let tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 创建单元格 td
+            // 行里面创建单元格(跟数据有关系的3个单元格) td 单元格的数量取决于每个对象里面的属性个数  for循环遍历对象 datas[i]
+            // 即每列
+            for (let k in datas[i]) { //循环每个对象
+                // 创建单元格, td即单元格
+                let td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+                // 属性赋值
+            }
+            // 创建删除单元格
+            let td = document.createElement('td');
+            td.innerHTML = '<a href = "javascript:;">删除</a?';
+            tr.appendChild(td);
+        }
+        // 删除操作
+        let as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
+    </script>
+</body>
+
+</html>
