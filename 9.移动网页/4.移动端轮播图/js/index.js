@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
     // 1. 获取元素 
     let focus = document.querySelector('.focus');
     let ul = focus.children[0];
+    let ol = focus.children[1];
     // 获得focus 的宽度
     let w = focus.offsetWidth;
 
@@ -35,8 +36,10 @@ window.addEventListener('load', function () {
             var translatex = -index * w;
             ul.style.transform = 'translateX(' + translatex + 'px)';
         }
+        ol.querySelector('.current').classList.remove('current');
+        ol.children[index].classList.add('current');
 
-        
+
 
     })
 
