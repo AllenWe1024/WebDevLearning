@@ -103,6 +103,7 @@ div {
     height: 38px;
     background: url(../images/back.png) no-repeat;
     background-size: 38px 38px;
+    /* z-index: 1; */
 }
 
 

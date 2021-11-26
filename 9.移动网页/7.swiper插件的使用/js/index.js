@@ -1,4 +1,5 @@
 window.addEventListener('load', function() {
+    // 使用swiper
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
         centeredSlides: true,
