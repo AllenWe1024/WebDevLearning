@@ -276,6 +276,8 @@ body {
   margin-top: 0.3rem;
 }
 .users .bar {
+  /* test */
+  /* background-color: #fff; */
   width: 7.35rem;
   height: 3rem;
 }
@@ -380,12 +382,14 @@ body {
   left: 0.525rem;
   top: 0.225rem;
   color: #4996f5;
+
   font-size: 0.175rem;
 }
 .sales .line {
   width: 100%;
   height: 100%;
-  /* background-color: pink; */
+  /* test */
+  /* background-color:#00f2f1; */
 }
 /* 渠道分布以及季度销售模块 */
 .wrap {

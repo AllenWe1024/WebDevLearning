@@ -53,7 +53,7 @@ window.onload = function () {
         {
           name: '点位统计',
           type: 'pie',
-          radius: ['10%', '80%'],
+          radius: ['10%', '70%'],
           center: ['50%', '50%'],
           roseType: 'radius',
           itemStyle: {
@@ -68,7 +68,17 @@ window.onload = function () {
             { value: 25, name: "浙江" },
             { value: 30, name: "四川" },
             { value: 42, name: "湖北" }
-          ]
+          ],
+          label: {
+            fontSize: 10,
+
+          },
+          labelLine: {
+            // 连接到图形的线长度
+            length: 6,
+            // 连接到文字的线长度
+            length2: 8,
+          }
         }
       ]
     };
@@ -96,6 +106,7 @@ window.onload = function () {
         }
       },
       // 3. 鼠标经过柱子不显示提示框组件
+      // 注意：series.tooltip 仅在 tooltip.trigger 为 'item' 时有效。
       tooltip: {
         extraCssText: "opacity: 0"
       }
@@ -116,8 +127,18 @@ window.onload = function () {
         ]
       ),
       tooltip: {
-        trigger: "item"
+        // trigger: "item",
+        // axisPointer:{
+        //   show:'true',
+        //   type:'line',
+        // },
+        trigger: 'axis',
+        axisPointer: {
+          // show: 'shadow',
+          type: 'shadow',
+        }
       },
+
       grid: {
         left: "0%",
         right: "3%",
@@ -153,12 +174,14 @@ window.onload = function () {
             // 把x轴的刻度隐藏起来
             show: false
           },
+          // 修改文字颜色
           axisLabel: {
             color: "#4c9bfd"
           },
           // x轴这条线的颜色样式
           axisLine: {
             lineStyle: {
+              // color:'red',
               color: "rgba(0, 240, 255, 0.3)"
               // width: 3
             }
@@ -224,7 +247,7 @@ window.onload = function () {
   })();
   // 销售统计模块
   (function () {
-    // (1)准备数据
+    // 准备好要切换的数据
     var data = {
       year: [
         [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
@@ -243,10 +266,10 @@ window.onload = function () {
         [32, 54, 34, 87, 32, 45, 62, 68, 93, 54, 54, 24]
       ]
     };
-    // 1. 实例化对象
     var myChart = echarts.init(document.querySelector(".line"));
     // 2. 指定配置和数据
     var option = {
+      // 折线图的颜色
       color: ["#00f2f1", "#ed3f35"],
       tooltip: {
         // 通过坐标轴来触发
@@ -339,10 +362,18 @@ window.onload = function () {
     };
     // 3. 把配置和数据给实例对象
     myChart.setOption(option);
+
     // 4. tab切换效果制作
-    // (2) 点击切换效果
-    $(".sales .caption").on("click", "a", function () {
+    // 核心原理：
+    // 1. series 里面的data 数据决定着折线的显示
+    // 2. 当我们点击不同的tab标签， 就让  series 里面的data调用不同的数据即可
+    // 3. 我们现在只准备了年的数据，还需要准备季度、月和周的数据 
+    // 点击后切换
+    // index切换到块级作用域
+    let index = 0;
+    $('.sales').on('click', '.caption a', function () {
       // 此时要注意这个索引号的问题
+      // var index = 0;
       index = $(this).index() - 1;
       // 点击当前a 高亮显示 调用active
       $(this)
@@ -355,23 +386,23 @@ window.onload = function () {
       // console.log(data.year);
       // console.log(data["year"]);
       // console.log(data[this.dataset.type]);
+      // 拿到类别
       var arr = data[this.dataset.type];
-      console.log(arr);
+      // console.log(arr);
       // 根据拿到的数据重新渲染 series里面的data值
       option.series[0].data = arr[0];
       option.series[1].data = arr[1];
       // 重新把配置好的新数据给实例对象
       myChart.setOption(option);
-    });
+    })
     // 5. tab栏自动切换效果
     //  开启定时器每隔3s，自动让a触发点击事件即可
     var as = $(".sales .caption a");
-    var index = 0;
-    var timer = setInterval(function () {
+    var timer = setInterval(() => {
       index++;
       if (index >= 4) index = 0;
       as.eq(index).click();
-    }, 1000);
+    }, 3000);
     // 鼠标经过sales，关闭定时器，离开开启定时器
     $(".sales").hover(
       function () {
@@ -383,102 +414,15 @@ window.onload = function () {
           index++;
           if (index >= 4) index = 0;
           as.eq(index).click();
-        }, 1000);
+        }, 3000);
       }
     );
+
+
     // 当我们浏览器缩放的时候，图表也等比例缩放
     window.addEventListener("resize", function () {
       // 让我们的图表调用 resize这个方法
       myChart.resize();
     });
   })();
-  // 销售渠道模块 雷达图
-  (function () {
-    // 1. 实例化对象
-    var myChart = echarts.init(document.querySelector(".radar"));
-    // 2.指定配置
-
-    var option = {
-      tooltip: {
-        show: true,
-        // 控制提示框组件的显示位置
-        position: ["60%", "10%"]
-      },
-      radar: {
-        indicator: [
-          { name: "机场", max: 100 },
-          { name: "商场", max: 100 },
-          { name: "火车站", max: 100 },
-          { name: "汽车站", max: 100 },
-          { name: "地铁", max: 100 }
-        ],
-        // 修改雷达图的大小
-        radius: "65%",
-        shape: "circle",
-        // 分割的圆圈个数
-        splitNumber: 4,
-        name: {
-          // 修饰雷达图文字的颜色
-          textStyle: {
-            color: "#4c9bfd"
-          }
-        },
-        // 分割的圆圈线条的样式
-        splitLine: {
-          lineStyle: {
-            color: "rgba(255,255,255, 0.5)"
-          }
-        },
-        splitArea: {
-          show: false
-        },
-        // 坐标轴的线修改为白色半透明
-        axisLine: {
-          lineStyle: {
-            color: "rgba(255, 255, 255, 0.5)"
-          }
-        }
-      },
-      series: [
-        {
-          name: "北京",
-          type: "radar",
-          // 填充区域的线条颜色
-          lineStyle: {
-            normal: {
-              color: "#fff",
-              width: 1,
-              opacity: 0.5
-            }
-          },
-          data: [[90, 19, 56, 11, 34]],
-          // 设置图形标记 （拐点）
-          symbol: "circle",
-          // 这个是设置小圆点大小
-          symbolSize: 5,
-          // 设置小圆点颜色
-          itemStyle: {
-            color: "#fff"
-          },
-          // 让小圆点显示数据
-          label: {
-            show: true,
-            fontSize: 10
-          },
-          // 修饰我们区域填充的背景颜色
-          areaStyle: {
-            color: "rgba(238, 197, 102, 0.6)"
-          }
-        }
-      ]
-    };
-    // 3.把配置和数据给对象
-    myChart.setOption(option);
-    // 当我们浏览器缩放的时候，图表也等比例缩放
-    window.addEventListener("resize", function () {
-      // 让我们的图表调用 resize这个方法
-      myChart.resize();
-    });
-  })();
-
 }
