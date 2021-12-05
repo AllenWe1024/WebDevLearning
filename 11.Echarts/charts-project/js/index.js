@@ -425,4 +425,311 @@ window.onload = function () {
       myChart.resize();
     });
   })();
+
+  // 销售渠道模块 雷达图
+  (function () {
+    // 1. 实例化对象
+    var myChart = echarts.init(document.querySelector(".radar"));
+    // 2.指定配置
+
+    var option = {
+      tooltip: {
+        show: true,
+        // 控制提示框组件的显示位置
+        position: ["60%", "10%"],
+      },
+      radar: {
+        indicator: [
+          { name: "机场", max: 100 },
+          { name: "商场", max: 100 },
+          { name: "火车站", max: 100 },
+          { name: "汽车站", max: 100 },
+          { name: "地铁", max: 100 },
+        ],
+        // 修改雷达图的大小
+        radius: "70%",
+        shape: "circle",
+        // 分割的圆圈个数
+        splitNumber: 4,
+        name: {
+          // 修饰雷达图文字的颜色
+          textStyle: {
+            color: "#4c9bfd",
+          },
+        },
+        // 分割的圆圈线条的样式
+        splitLine: {
+          lineStyle: {
+            color: "rgba(255,255,255, 0.5)",
+          },
+        },
+        splitArea: {
+          show: false,
+        },
+        // 坐标轴的线修改为白色半透明
+        axisLine: {
+          lineStyle: {
+            color: "rgba(255, 255, 255, 0.5)",
+          },
+        },
+      },
+      series: [
+        {
+          name: "北京",
+          type: "radar",
+          // 填充区域的线条颜色
+          lineStyle: {
+            normal: {
+              color: "#fff",
+              width: 1,
+              opacity: 0.5,
+            },
+          },
+          data: [[90, 19, 56, 11, 34]],
+          // 设置图形标记 （拐点）
+          symbol: "circle",
+          // 这个是设置小圆点大小
+          symbolSize: 5,
+          // 设置小圆点颜色
+          itemStyle: {
+            color: "#fff",
+          },
+          // 让小圆点显示数据
+          label: {
+            show: true,
+            fontSize: 10,
+          },
+          // 修饰我们区域填充的背景颜色
+          areaStyle: {
+            color: "rgba(238, 197, 102, 1)",
+          },
+        },
+      ],
+    };
+    // 3.把配置和数据给对象
+    myChart.setOption(option);
+    // 当我们浏览器缩放的时候，图表也等比例缩放
+    window.addEventListener("resize", function () {
+      // 让我们的图表调用 resize这个方法
+      myChart.resize();
+    });
+  })();
+  // 销售模块 半圆形饼形图
+  (function () {
+    // 1。实例化对象
+
+    let myChart = echarts.init(document.querySelector('.gauge'))
+    // 2.指定配置
+    let option = {
+      series: [
+        {
+          name: '销售进度 ',
+          type: 'pie',
+          radius: ['130%', '150%'],
+          center: ['48%', '80%'],
+          // 鼠标经过不变大
+          hoverOffset: 0,
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: '40',
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          startAngle: 180,
+          data: [
+            {
+              value: 100,
+              itemStyle: {
+                // 颜色渐变#00c9e0->#005fc1
+                color: new echarts.graphic.LinearGradient(
+                  // (x1,y2) 点到点 (x2,y2) 之间进行渐变
+                  0,
+                  0,
+                  0,
+                  1,
+                  [
+                    { offset: 0, color: "#00c9e0" }, // 0 起始颜色
+                    { offset: 1, color: "#005fc1" } // 1 结束颜色
+                  ]
+                )
+              }
+            },
+            {
+              value: 100,
+              itemStyle: { color: '#12274d' }
+            },
+            {
+              value: 200,
+              itemStyle: {
+                color: 'transparent',
+              }
+            },
+          ]
+        }
+      ]
+    };
+    // 3.配置给实例化对象
+    myChart.setOption(option);
+    // 当我们浏览器缩放的时候，图表也等比例缩放
+    window.addEventListener("resize", function () {
+      // 让我们的图表调用 resize这个方法
+      myChart.resize();
+    });
+  })();
+  // 全国热榜模块
+  (function () {
+    // 1. 准备相关数据
+    var hotData = [
+      {
+        city: "北京", // 城市
+        sales: "25, 179", // 销售额
+        flag: true, //  上升还是下降
+        brands: [
+          //  品牌种类数据
+          { name: "可爱多", num: "9,086", flag: true },
+          { name: "娃哈哈", num: "8,341", flag: true },
+          { name: "喜之郎", num: "7,407", flag: false },
+          { name: "八喜", num: "6,080", flag: false },
+          { name: "小洋人", num: "6,724", flag: false },
+          { name: "好多鱼", num: "2,170", flag: true }
+        ]
+      },
+      {
+        city: "河北",
+        sales: "23,252",
+        flag: false,
+        brands: [
+          { name: "可爱多", num: "3,457", flag: false },
+          { name: "娃哈哈", num: "2,124", flag: true },
+          { name: "喜之郎", num: "8,907", flag: false },
+          { name: "八喜", num: "6,080", flag: true },
+          { name: "小洋人", num: "1,724", flag: false },
+          { name: "好多鱼", num: "1,170", flag: false }
+        ]
+      },
+      {
+        city: "上海",
+        sales: "20,760",
+        flag: true,
+        brands: [
+          { name: "可爱多", num: "2,345", flag: true },
+          { name: "娃哈哈", num: "7,109", flag: true },
+          { name: "喜之郎", num: "3,701", flag: false },
+          { name: "八喜", num: "6,080", flag: false },
+          { name: "小洋人", num: "2,724", flag: false },
+          { name: "好多鱼", num: "2,998", flag: true }
+        ]
+      },
+      {
+        city: "江苏",
+        sales: "23,252",
+        flag: false,
+        brands: [
+          { name: "可爱多", num: "2,156", flag: false },
+          { name: "娃哈哈", num: "2,456", flag: true },
+          { name: "喜之郎", num: "9,737", flag: true },
+          { name: "八喜", num: "2,080", flag: true },
+          { name: "小洋人", num: "8,724", flag: true },
+          { name: "好多鱼", num: "1,770", flag: false }
+        ]
+      },
+      {
+        city: "山东",
+        sales: "20,760",
+        flag: true,
+        brands: [
+          { name: "可爱多", num: "9,567", flag: true },
+          { name: "娃哈哈", num: "2,345", flag: false },
+          { name: "喜之郎", num: "9,037", flag: false },
+          { name: "八喜", num: "1,080", flag: true },
+          { name: "小洋人", num: "4,724", flag: false },
+          { name: "好多鱼", num: "9,999", flag: true }
+        ]
+      }
+    ];
+    //  2. 根据数据渲染各省热销 sup 模块内容
+    // (1) 遍历 hotData对象
+    var supHTML = "";
+
+    $.each(hotData, function (index, item) {
+      // console.log(item);
+      // 第二步：根据数据渲染各省热销 sup 模块内容
+      // - 删掉原先自带小li
+      // - 遍历数据 $.each()  
+      // - 拼接字符串把数据渲染到 li 的span 里面
+      // - 追加给 .sup 盒子
+      // 支持三元表达式
+      supHTML += `<li>
+      <span>${item.city}</span>
+      <span>${item.sales} <s class="${item.flag ? "icon-up" : "icon-down"}"></s></span>
+      </li>`;
+      // 追加到html中
+      $('.sup').html(supHTML);
+    })
+
+    // - 激活当前的tab样式，删除其他tab的样式
+    // - 渲染各省热销 sub 模块 
+    //   - 注意鼠标进入tab， 只遍历 当前索引号对应的 城市对象里面的 brands 
+    //   - 拼接html格式字符串，进行渲染
+    // 鼠标经过当前的小li要高亮显示
+    $(".province .sup").on("mouseenter", "li", function () {
+      // 注意重新赋值index防止找不到index（而跳转）
+      index = $(this).index();
+      render($(this));
+      // console.log(this);
+      // console.log(index);
+      // console.log(hotData[$(this).index()]);
+      // console.log(hotData[$(this).index()].brands);
+
+    })
+    // 声明一个函数 里面设置sup当前小li高亮还有 对应的品牌对象渲染
+    // 防止鼠标冲突
+    function render(currentEle) {
+      currentEle
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+      var subHTML = "";
+      $.each(hotData[currentEle.index()].brands, function (index, item) {
+        // console.log(item);
+        subHTML += `<li>
+        <span>${item.name}</span>
+        <span> ${item.num}<s class=${item.flag ? "icon-up" : "icon-down"}></s></span>
+        </li>`;
+      });
+      $(".sub").html(subHTML);
+
+    }
+    // 4. 默认把第一个小li处于鼠标经过状态
+    var lis = $(".province .sup li");
+    lis.eq(0).mouseenter();
+    // 5 开启定时器
+    var index = 0;
+    var timer = setInterval(function () {
+      index++;
+      if (index >= 5) index = 0;
+      // lis.eq(index).mouseenter();
+      render(lis.eq(index));
+    }, 2000);
+    $(".province .sup").hover(
+      // 鼠标经过事件
+      function () {
+        clearInterval(timer);
+      },
+      // 鼠标离开事件
+      function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+          index++;
+          if (index >= 5) index = 0;
+          // lis.eq(index).mouseenter();
+          render(lis.eq(index));
+        }, 2000);
+      }
+    );
+  })();
 }
