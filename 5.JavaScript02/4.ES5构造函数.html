@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 利用 new Object() 创建对象
+
+        var obj1 = new Object();
+
+        // 2. 利用 对象字面量创建对象
+
+        var obj2 = {};
+
+        // 3. 利用构造函数创建对象
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.sing = function () {
+                console.log('say');
+
+            }
+        }
+
+        var abc = new Star('abc', 18);
+        var a123 = new Star('a123', 19);
+        console.log(abc);
+        abc.sing();
+        a123.sing();
+    </script>
+</body>
+
+</html>

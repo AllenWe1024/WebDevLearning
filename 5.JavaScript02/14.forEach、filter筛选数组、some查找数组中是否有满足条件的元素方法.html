@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // forEach 迭代(遍历) 数组
+        var arr = [1, 2, 3];
+        var sum = 0;
+        arr.forEach(function (value, index, array) {
+            console.log('每个数组元素' + value);
+            console.log('每个数组元素的索引号' + index);
+            console.log('数组本身' + array);
+            sum += value;
+        })
+        console.log(sum);
+
+        var arr2 = [12, 66, 4, 88, 3, 7];
+        var newArr = arr2.filter(function (value, index, array) {
+            //参数一是:数组元素
+            //参数二是:数组元素的索引
+            //参数三是:当前的数组
+            return value >= 20;
+        });
+        console.log(newArr);//[66,88] //返回值是一个新数组
+
+        // some 查找数组中是否有满足条件的元素
+        var arr3 = [10, 30, 4];
+        var flag = arr3.some(function (value, index, array) {
+            //参数一是:数组元素
+            //参数二是:数组元素的索引
+            //参数三是:当前的数组
+            return value < 3;
+        });
+        console.log(flag);//false返回值是布尔值,只要查找到满足条件的一个元素就立马终止循环
+    </script>
+</body>
+
+</html>

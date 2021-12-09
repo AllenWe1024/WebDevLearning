@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 构造函数的问题. 
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('我会唱歌');
+
+            // }
+        }
+        Star.prototype.sing = function () {
+            console.log('singing');
+        }
+        var abc = new Star('abc', 18);
+        var a123 = new Star('a123', 19);
+        console.log(abc.sing === a123.sing);
+        // console.dir(Star);
+        abc.sing();
+        a123.sing();
+        // 2. 一般情况下,我们的公共属性定义到构造函数里面, 公共的方法我们放到原型对象身上
+    </script>
+</body>
+
+</html>
