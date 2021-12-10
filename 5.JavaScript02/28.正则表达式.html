@@ -118,6 +118,47 @@
     console.log(reg2.test('aaa')); // true
     console.log(reg2.test(''));// false
     console.log(reg2.test('aaaa')); // true 
+
+    console.log(',,,,,,,,,,,,,,,,,,,,,,,');
+    var reg = /^abc{3}$/; // 它只是让c重复三次   abccc
+    console.log(reg.test('abc')); // false
+    console.log(reg.test('abcabcabc')); // false
+    console.log(reg.test('abccc')); // true
+
+    // 小括号 表示优先级
+    var reg = /^(abc){3}$/; // 它是让abc重复三次
+    console.log(reg.test('abc')); // false
+    console.log(reg.test('abcabcabc')); // true
+    console.log(reg.test('abccc')); // false
+
+    // 座机号码验证:  全国座机号码  两种格式:   010-12345678  或者  0530-1234567
+    // 正则里面的或者 符号  |  
+    var reg = /^\d{3}-\d{8}|\d{4}-\d{7}$/;
+    // 或者
+    var reg = /^\d{3,4}-\d{7,8}$/;
+
+    // 正则替换replace
+    console.log('~~~~~~~~~~~~~~~~~~~~~~');
+    var str = 'andy和red';
+    var newStr = str.replace('andy', 'baby');
+    console.log(newStr)//baby和red
+    //等同于 此处的andy可以写在正则表达式内
+    var newStr2 = str.replace(/andy/, 'baby');
+    console.log(newStr2)//baby和red
+    //全部替换
+    var str = 'abcabc'
+    var nStr = str.replace(/a/, '哈哈')
+    console.log(nStr) //哈哈bcabc
+    //全部替换g
+    var nStr = str.replace(/a/g, '哈哈')
+    console.log(nStr) //哈哈bc哈哈bc
+    //忽略大小写i
+    var str = 'aAbcAba';
+    var newStr = str.replace(/a/gi, '哈哈')//"哈哈哈哈bc哈哈b哈哈"
+    console.log(newStr);
+    var str = 'aAbcAba';
+    var newStr = str.replace(/a|b/gi, '哈哈')//"哈哈哈哈哈哈c哈哈哈哈哈哈"
+    console.log(newStr);
   </script>
 </body>
 
