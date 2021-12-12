@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>箭头函数面试题</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    var age = 1000;
+    let bigObj = {
+      age: 100,
+      say: () => {
+        console.log(this.age); // 1000，这里this指向window
+      },
+      obj: {
+        age: 20,
+        say: () => {
+          console.log(this.age); // 1000，这里this指向window
+        }
+      }
+    }
+
+    bigObj.say();
+    bigObj.obj.say();
+
+    console.log('--------------');
+    const fn = function () {
+      age = 100,
+        say = () => {
+          console.log(this.age); // 100，这里this指向fn
+          say2 = () => {
+            console.log(this.age); // 100，这里this指向fn
+          }
+        },
+        say();
+      say2();
+      obj = {
+        age: 20,
+        say3: () => {
+          console.log(this.age); // 100，这里this指向fn
+        }
+      }
+      obj.say3();
+    }
+    fn();
+  </script>
+</body>
+
+</html>

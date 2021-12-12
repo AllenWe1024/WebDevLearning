@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let [a, b, c] = [1, 2, 3];
+    console.log(a)//1
+    console.log(b)//2
+    console.log(c)//3
+    //如果解构不成功，变量的值为undefined
+
+    let ary = [4, 5, 6];
+    let [d, e, f, g, h] = ary;
+    console.log(d)
+    console.log(e)
+    console.log(f)
+    console.log(g)
+    console.log(h)
+
+    console.log('-----------');
+    let person = { name: 'zhangsan', age: 20 };
+    let { name, age } = person;
+    console.log(name); // 'zhangsan' 
+    console.log(age); // 20
+
+    let { name: myName, age: myAge } = person; // myName myAge 属于别名
+    console.log(myName); // 'zhangsan' 
+    console.log(myAge); // 20
+
+  </script>
+</body>
+
+</html>
