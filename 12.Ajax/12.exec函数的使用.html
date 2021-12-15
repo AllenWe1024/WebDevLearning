@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var str = 'hello'
+    var pattern = /e/
+
+    var result = pattern.exec(str)
+    console.log(result) //['e', index: 1, input: 'hello', groups: undefined]
+
+    var str = '<div>我是{{name}}</div>'
+    var pattern = /{{([a-zA-Z]+)}}/
+    var result = pattern.exec(str)
+
+    console.log(result) //(2) ['{{name}}', 'name', index: 7, input: '<div>我是{{name}}</div>', groups: undefined]
+
+    var str = '<div>我是{{name}}</div>'
+    var pattern = /{{([a-zA-Z]+)}}/
+    var patternResult = pattern.exec(str)
+    // console.log(patternResult)
+    str = str.replace(patternResult[0], patternResult[1]) //<div>我是name</div>
+    console.log(str)
+
+    //多次replace
+    var str = '<div>{{name}}今年{{ age }}岁了</div>'
+    var pattern = /{{\s*([a-zA-Z]+)\s*}}/
+
+    var patternResult = pattern.exec(str)
+    // console.log(patternResult);
+    str = str.replace(patternResult[0], patternResult[1])
+    console.log(str) // 输出 <div>name今年{{ age }}岁了</div>
+
+    patternResult = pattern.exec(str)
+    str = str.replace(patternResult[0], patternResult[1])
+    console.log(str) // 输出 <div>name今年age岁了</div>
+
+    patternResult = pattern.exec(str)
+    console.log(patternResult) // 输出 null
+
+    
+
+  </script>
+</body>
+
+</html>
