@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/jquery.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #angel {
+      position: absolute;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./IMG_0511.png" alt="" id="angel" />
+
+  <script>
+    $(function () {
+      var angel = $('#angel')
+      var timer = null // 1.预定义一个 timer 节流阀
+      $(document).on('mousemove', function (e) {
+        if (timer) { return } // 3.判断节流阀是否为空，如果不为空，则证明距离上次执行间隔不足16毫秒
+        timer = setTimeout(function () {
+          $(angel).css('left', e.pageX + 'px').css('top', e.pageY + 'px')
+          timer = null // 2.当设置了鼠标跟随效果后，清空 timer 节流阀，方便下次开启延时器
+          console.log(1);
+        }, 16)
+      })
+    })
+
+  </script>
+</body>
+
+</html>
