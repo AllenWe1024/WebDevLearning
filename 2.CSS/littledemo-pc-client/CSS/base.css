@@ -17,6 +17,7 @@ input {
   margin: 0;
   padding: 0;
 }
+
 /* 设置网页统一的字体大小、行高、字体系列相关属性 */
 body {
   font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
@@ -35,6 +36,7 @@ em,
 i {
   font-style: normal;
 }
+
 /* 去除a标签默认下划线，并设置默认文字颜色 */
 a {
   text-decoration: none;
@@ -45,12 +47,14 @@ a {
 img {
   vertical-align: middle;
 }
+
 /* 去除input默认样式 */
 input {
   border: none;
   outline: none;
   color: #333;
 }
+
 /* 左浮动 */
 .fl {
   float: left;
@@ -68,6 +72,7 @@ input {
   content: "";
   display: table;
 }
+
 .clearfix::after {
   clear: both;
 }

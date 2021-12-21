@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /* background-image: linear-gradient(
+                red,
+                orange,
+                yellow,
+                green,
+                blue,
+                purple
+            ); */
+            /* background-image: url(./background.jpg); */
+            /* background-image: linear-gradient(
+                    transparent,
+                    rgba(0, 0, 0, 0.6)
+                ); */
+            overflow: hidden;
+        }
+
+        .box img {
+            position: absolute;
+            height: 200px;
+        }
+
+        .box .title {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            color: white;
+            z-index: 1;
+        }
+
+        .box .mask {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            opacity: 0;
+            width: 300px;
+            height: 200px;
+            background-image: linear-gradient(transparent,
+                    rgba(0, 0, 0, 0.6));
+            /* border-corner-image: linear-gradient(); */
+            transition: all .5s;
+        }
+
+        .box:hover .mask {
+            opacity: 1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./background.jpg" alt="" />
+        <div class="title">图片测试</div>
+        <!-- 渐变背景 -->
+        <div class="mask"></div>
+    </div>
+</body>
+
+</html>
