@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: '张三',
+      fn: function () {
+        console.log(this);//this 指向 是obj对象
+        return () => {
+          console.log(this);//this 指向 的是箭头函数定义的位置，那么这个箭头函数定义在fn里面，而这个fn指向是的obj对象，所以这个this也指向是obj对象
+        }
+      }
+    }
+    // const resFn = fn.call(obj); //fn绑定到obj
+    // resFn();
+    fn2 = function (a) {
+      // console.log(this);//this 指向 是obj对象
+      a => a * a
+      return a;
+    }
+
+    let a = fn2(2);
+    console.log(a);
+    console.log(() => {
+      console.log(this);//this 指向 的是箭头函数定义的位置，那么这个箭头函数定义在fn里面，而这个fn指向是的obj对象，所以这个this也指向是obj对象
+    }); // 这里输出的是一个字符串
+
+    var age = 100;
+
+    var obj3 = { //对象不能产生作用域
+      age: 20,
+      say: () => {
+        alert(this.age) // 100
+      }
+    }
+
+    obj3.say();//箭头函数this指向的是被声明的作用域里面，而对象没有作用域的，所以箭头函数虽然在对象中被定义，但是this指向的是全局作用域
+  </script>
+</body>
+
+</html>
