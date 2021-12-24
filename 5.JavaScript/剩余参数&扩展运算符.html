@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>剩余参数</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    // const sum = (...args) => {
+    // 	let total = 0;
+    // 	args.forEach(item => total += item);
+    // 	return total;
+    // };
+
+    // console.log(sum(10, 20));
+    // console.log(sum(10, 20, 30));
+
+
+    let ary1 = ['张三', '李四', '王五', '6'];
+    let [s1, ...s2] = ary1;
+    console.log(s1)
+    console.log(s2)
+    
+
+    let [...s3] = ary1;
+    console.log(s3)
+
+    let ary = [1, 2, 3];
+    // ...ary  // 1, 2, 3
+    console.log(...ary);    // 1 2 3,相当于下面的代码
+    console.log(1, 2, 3);
+
+    let ary3 = ["a", "b", "c"];
+    // ...ary3 // "a", "b", "c"
+    console.log(...ary3)
+    console.log("a", "b", "c")
+
+    let ary4 = [1, 2, 3];
+    let ary5 = [3, 4, 5];
+    let ary6 = [...ary4, ...ary5];
+    console.log(ary6);
+
+    ary4.push(...ary5);
+    console.log(ary4);
+
+    //定义一个集合
+    let arrayLike = {
+      '0': 'a',
+      '1': 'b',
+      '2': 'c',
+      length: 3
+    };
+    //转成数组
+    let arr7 = Array.from(arrayLike); // ['a', 'b', 'c']
+    console.log(arr7);
+  </script>
+</body>
+
+</html>
