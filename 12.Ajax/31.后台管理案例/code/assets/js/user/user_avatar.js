@@ -29,8 +29,10 @@ $(function() {
 
     // 1. 拿到用户选择的文件
     var file = e.target.files[0]
+    console.log(file);
     // 2. 将文件，转化为路径
     var imgURL = URL.createObjectURL(file)
+    console.log(imgURL);
     // 3. 重新初始化裁剪区域
     $image
       .cropper('destroy') // 销毁旧的裁剪区域
@@ -60,8 +62,8 @@ $(function() {
           return layer.msg('更换头像失败！')
         }
         layer.msg('更换头像成功！')
-        window.parent.getUserInfo()
-      }
+        window.parent.getUserInfo()      }
     })
   })
+  
 })
