@@ -62,6 +62,7 @@ function renderAvatar(user) {
     $('.layui-nav-img')
       .attr('src', user.user_pic)
       .show()
+      $('.text-avatar').hide()
 
     // 3.2 渲染文本头像
   } else {
