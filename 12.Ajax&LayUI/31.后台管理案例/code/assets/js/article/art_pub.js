@@ -60,7 +60,7 @@ $(function() {
       .cropper(options) // 重新初始化裁剪区域
   })
 
-  // 定义文章的发布状态
+  // 定义文章的发布状态，默认为已发布
   var art_state = '已发布'
 
   // 为存为草稿按钮，绑定点击事件处理函数
@@ -73,7 +73,10 @@ $(function() {
     // 1. 阻止表单的默认提交行为
     e.preventDefault()
     // 2. 基于 form 表单，快速创建一个 FormData 对象
-    var fd = new FormData($(this)[0])
+    var fd = new FormData($(this)[0]) //[0]转化为原生DOM
+    // fd.forEach(function(v, k) {
+    //   console.log(v, k);
+    // })
     // 3. 将文章的发布状态，存到 fd 中
     fd.append('state', art_state)
     // 4. 将封面裁剪过后的图片，输出为一个文件对象
