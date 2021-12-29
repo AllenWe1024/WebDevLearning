@@ -10,7 +10,7 @@ fs.writeFile('./files/3.txt', 'ok123', function(err) {
   // 2.2 如果文件写入失败，则 err 的值等于一个 错误对象
   // console.log(err)
 
-  if (err) {
+  if (err) { // err不为null，则写入失败
     return console.log('文件写入失败！' + err.message)
   }
   console.log('文件写入成功！')
