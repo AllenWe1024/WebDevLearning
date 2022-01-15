@@ -9,14 +9,18 @@ const regStyle = /<style>[\s\S]*<\/style>/
 const regScript = /<script>[\s\S]*<\/script>/
 
 // 2.1 调用 fs.readFile() 方法读取文件
-fs.readFile(path.join(__dirname, '../素材/index.html'), 'utf8', function(err, dataStr) {
+
+fs.readFile(path.join(__dirname, './files/index.html'), 'utf8', function(err, dataStr) {
   // 2.2 读取 HTML 文件失败
   if (err) return console.log('读取HTML文件失败！' + err.message)
   // 2.3 读取文件成功后，调用对应的三个方法，分别拆解出 css, js, html 文件
+  // console.log('ok');
   resolveCSS(dataStr)
   resolveJS(dataStr)
   resolveHTML(dataStr)
 })
+
+// 注意需要先新建clock目录
 
 // 3.1 定义处理 css 样式的方法
 function resolveCSS(htmlStr) {
@@ -47,7 +51,9 @@ function resolveJS(htmlStr) {
 // 5.1 定义处理 HTML 结构的方法
 function resolveHTML(htmlStr) {
   // 5.2 将字符串调用 replace 方法，把内嵌的 style 和 script 标签，替换为外联的 link 和 script 标签
-  const newHTML = htmlStr.replace(regStyle, '<link rel="stylesheet" href="./index.css" />').replace(regScript, '<script src="./index.js"></script>')
+  const newHTML = htmlStr
+    .replace(regStyle, '<link rel="stylesheet" href="./index.css" />')
+    .replace(regScript, '<script src="./index.js"></script>')
   // 5.3 写入 index.html 这个文件
   fs.writeFile(path.join(__dirname, './clock/index.html'), newHTML, function(err) {
     if (err) return console.log('写入 HTML 文件失败！' + err.message)
