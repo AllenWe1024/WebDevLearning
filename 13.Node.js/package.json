@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "art-template": "^4.13.2",
-    "express": "^4.17.2",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
     "jquery": "^3.6.0",
     "moment": "^2.29.1"
   },
