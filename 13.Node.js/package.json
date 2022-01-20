@@ -1,6 +1,21 @@
 {
   "dependencies": {
+    "art-template": "^4.13.2",
     "express": "^4.17.2",
+    "jquery": "^3.6.0",
     "moment": "^2.29.1"
+  },
+  "name": "13.node",
+  "version": "1.0.0",
+  "main": "01.使用readFile方法读取文件的内容.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.66.0"
   }
 }
