@@ -1,2 +1,5 @@
 .vscode
 /13.Node.js/node_modules
+/13.Node.js/35.session案例/node_modules
+/13.Node.js/36.jwt案例/node_modules
+/13.Node.js/37.大事件案例/api_server/node_modules
