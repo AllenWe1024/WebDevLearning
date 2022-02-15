@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-text指令</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- message+'!'用于拼接message的感叹号 -->
+    <!-- v-text 方法会导致“深圳”会被覆盖 -->
+    <h2 v-text="message+'!'">深圳</h2>
+    <h2 v-text="info+'!'">深圳</h2>
+    <h2>{{ message +'!'}}深圳</h2>
+  </div>
+  <!-- 生产环境版本，优化了尺寸和速度 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "abc",
+        info: "abc"
+      }
+    })
+  </script>
+</body>
+
+</html>

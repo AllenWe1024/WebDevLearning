@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on补充</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="button" value="事件绑定" v-on:click="doIt">
+    <input type="button" value="事件绑定" v-on:monseenter="doIt">
+    <input type="button" value="事件绑定" v-on:dblclick="doIt">
+    <input type="button" value="事件绑定" @dblclick="changeFood">
+  </div>
+
+  <!-- 生产环境版本，优化了尺寸和速度 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        food: "这是个食物"
+      },
+      methods: {
+        doIt: function() {
+          console.log("123");
+        },
+        changeFood: function() {
+          console.log(this.food);
+          this.food += "!"
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

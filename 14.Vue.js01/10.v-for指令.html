@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-for指令</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in arr" :title="item">
+        {{ index }}，{{ item }}
+      </li>
+      <li v-for="(item,index) in objArr">
+        {{ item.name }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- 生产环境版本，优化了尺寸和速度 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        arr: [1, 2, 3, 4, 5],
+        objArr: [
+          { name: "jack" },
+          { name: "rose" }
+        ]
+      }
+    })
+
+  </script>
+</body>
+
+</html>
