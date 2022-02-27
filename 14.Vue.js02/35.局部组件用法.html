@@ -11,7 +11,7 @@
     <hello-world></hello-world>
     <hello-tom></hello-tom>
     <hello-jerry></hello-jerry>
-    <test-com></test-com>
+    <!-- <test-com></test-com> -->
   </div>
   <script type="text/javascript" src="js/vue.js"></script>
   <script type="text/javascript">
@@ -19,9 +19,9 @@
       局部组件注册
       局部组件只能在注册他的父组件中使用
     */
-    Vue.component('test-com', {
-      template: '<div>Test<hello-world></hello-world></div>'
-    });
+    // Vue.component('test-com', {
+    //   template: '<div>Test<hello-world></hello-world></div>'
+    // });
     var HelloWorld = {
       data: function() {
         return {
