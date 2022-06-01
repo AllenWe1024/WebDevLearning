@@ -27,7 +27,9 @@
       methods: {
         handle: function(event) {
           // 使用输入域中的最新的数据覆盖原来的数据
+          console.log(event)
           this.msg = event.target.value;
+          // this.msg = event.1
         }
       }
     });
