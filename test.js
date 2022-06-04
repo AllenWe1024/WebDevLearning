@@ -11,7 +11,7 @@ function insertSort(arr) {
     }
     return arr
 }
-
+// 123
 // console.log(insertSort([12, 3, 123, 213, 2143, 12, 421, 4]));
 
 function shellSort(arr) {
