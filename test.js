@@ -16,6 +16,7 @@ function insertSort(arr) {
 function shellSort(arr) {
     let n = arr.length,
         d = n
+        // 
     while (d > 1) {
         d = Math.floor(d / 2)
         for (let i = d; i < n; i++) {
