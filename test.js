@@ -6,6 +6,7 @@ function insertSort(arr) {
         for (; j >= 0 && arr[j] > temp; j--) {
             arr[j + 1] = arr[j]
         }
+        // 
         arr[j + 1] = temp
     }
     return arr
