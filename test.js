@@ -9,6 +9,7 @@ function insertSort(arr) {
         // 
         arr[j + 1] = temp
     }
+    // 
     return arr
 }
 // 123
